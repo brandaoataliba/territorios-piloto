@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a6da7">
+  <meta name="description" content="Entrada instalável para o trabalho de campo dos territórios.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <title>Territórios | Trabalho de campo</title>
+</head>
+<body>
+  <header class="topo">
+    <div class="limite">
+      <span class="sobretitulo">TRABALHO DE CAMPO</span>
+      <h1>Territórios</h1>
+      <p>Acesso pelo link individual</p>
+    </div>
+  </header>
+  <main class="limite">
+    <section class="cartao" aria-labelledby="titulo-acesso">
+      <h2 id="titulo-acesso">Abrir um território</h2>
+      <p>Cole o link que você recebeu no grupo. O aplicativo atual abrirá com as ruas, casas e mapa desse território.</p>
+      <label for="territoryUrl">Link individual do território</label>
+      <input id="territoryUrl" type="url" inputmode="url" autocomplete="off" spellcheck="false"
+        placeholder="https://script.google.com/macros/s/.../exec?t=...&k=..." aria-describedby="urlStatus">
+      <p id="urlStatus" class="estado" role="status" aria-live="polite">O link fica somente nesta tela e não é salvo no aparelho.</p>
+      <a id="openLink" class="botao principal desabilitado" target="_blank" rel="noopener noreferrer"
+        aria-disabled="true">Abrir território</a>
+    </section>
+
+    <section class="cartao suave" aria-labelledby="titulo-instalar">
+      <h2 id="titulo-instalar">Instalar no celular</h2>
+      <p>Instale esta entrada na tela inicial para acessá-la como aplicativo. O trabalho nas ruas continua exigindo internet.</p>
+      <button id="installButton" class="botao secundario" type="button" hidden>Instalar aplicativo</button>
+      <p id="installHint" class="dica">No navegador, escolha “Adicionar à tela inicial” no menu. No iPhone, use Compartilhar → Adicionar à Tela de Início.</p>
+    </section>
+
+    <p class="rodape">Piloto de navegação. O link individual atual continua válido e as marcações permanecem no Apps Script e nas planilhas.</p>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>
